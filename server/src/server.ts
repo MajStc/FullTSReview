@@ -1,4 +1,5 @@
 import "dotenv/config";
+import UserController from "../controllers/user.controller";
 import App from "./app/App";
 import validateEnv from "./app/validateEnv";
 
@@ -14,6 +15,7 @@ validateEnv();
 // Starting app
 const app = new App([
   // Adding all controllers
+  new UserController(),
 ]);
 
 // Express app listen
