@@ -26,7 +26,7 @@ export default class App {
     this.app.use(express.json());
     this.app.use(loggerMiddleware);
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(cors());
+    this.app.use(cors({ exposedHeaders: "x-auth-token" }));
   }
 
   private initializeControllers(controllers: Controller[]) {
